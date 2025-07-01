@@ -28,11 +28,17 @@ strategies for real-world applications.
 
 ---
 
+## 📰 Publication
+
+This work was submitted to and accepted at [LOD 2025](https://lod2025.icas.events/).
+
+---
+
 ## 🤖 Environment-Design
 
 This is the basic scheme of the [gymnasium](https://gymnasium.farama.org/index.html)-based environment, inspired by an industrial sorting process. For more details, see [Docs](docs/Environment.md).
 
-![alt text](docs/Sorting_Flowchart.svg)
+![alt text](docs/1_Sorting_Flowchart.jpg)
 
 ---
 
