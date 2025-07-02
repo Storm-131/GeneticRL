@@ -90,17 +90,18 @@ def genetic_action_search(env, steps=17, env_seed=None, population_size=100, gen
     if visualize:
         if not IN_JUPYTER:
             plt.ion()  # Use interactive mode only outside Jupyter
-        fig, ax = plt.subplots(figsize=(7, 5))
+        fig, ax = plt.subplots(figsize=(9, 5))
         # Pre-create lines for non-Jupyter mode.
         if not IN_JUPYTER:
             line_max, = ax.plot([], [], label="Max Reward", color="blue")
             line_min, = ax.plot([], [], label="Min Reward", color="orange")
             line_mean, = ax.plot([], [], label="Mean Reward", linestyle="dashed", color="green")
-        ax.set_xlabel("Generation")
-        ax.set_ylabel("Reward")
-        ax.set_title("Reward Evolution in the Population")
+        ax.set_xlabel("Generation", fontsize=16)
+        ax.set_ylabel("Reward", fontsize=16)
+        ax.set_title("Reward Evolution in the Population", fontsize=16)
         ax.set_xlim(0, generations)
-        ax.legend(loc="lower right")
+        ax.legend(loc="lower right", fontsize=12)
+        ax.tick_params(axis='both', which='major', labelsize=12)
 
     for gen in range(generations):
         fitnesses = []
@@ -191,9 +192,19 @@ def genetic_action_search(env, steps=17, env_seed=None, population_size=100, gen
     cumulative_rule_reward = test_env_rule(env, seed=env_seed, steps=steps,
                                            title="Rule-Based Agent", show=False, stats=False)
     if visualize:
+        if IN_JUPYTER:
+            # Save the figure even in Jupyter
+            ax.grid(False)  # Keine Gitterlinien
+            for spine in ax.spines.values():
+                spine.set_edgecolor('black')  # Schwarze Umrandung
+                spine.set_linewidth(1)
+            fig.savefig("img/figures/4_reward_evolution.png", dpi=300, bbox_inches='tight')
+            fig.savefig("img/figures/4_reward_evolution.svg", bbox_inches='tight')
         if not IN_JUPYTER:
             plt.ioff()
             plt.show()
+            fig.savefig("img/figures/4_reward_evolution.png", dpi=300, bbox_inches='tight')
+            fig.savefig("img/figures/4_reward_evolution.svg", bbox_inches='tight')
 
     # Calculate number of unique action sequences in the final population.
     unique_sequences = len(set(population))
