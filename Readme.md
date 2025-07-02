@@ -99,9 +99,7 @@ python main.py
 
 ## Contact 📬
 
-For questions or feedback, feel free to reach out to me at:
-
-[📧 Tom.Maus@ini.rub.de](mailto:tom.maus@ini.rub.de)
+For questions or feedback, feel free to [reach out to me](https://www.ini.rub.de/the_institute/people/tom-maus/).
 
 ---
 
