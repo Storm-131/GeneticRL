@@ -32,6 +32,8 @@ strategies for real-world applications.
 
 This work was submitted to and accepted at [LOD 2025](https://lod2025.icas.events/).
 
+- You can read the [full paper on arXiv](https://arxiv.org/abs/2507.00762).
+
 ---
 
 ## 🤖 Environment-Design
